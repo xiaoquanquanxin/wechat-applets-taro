@@ -2,7 +2,8 @@ import {Swiper, SwiperItem, View, CoverImage, ITouchEvent} from '@tarojs/compone
 import {navigateTo} from '@tarojs/taro';
 import './banner.less';
 
-const imgSrc = '/assets/img/active.png';
+const activeImgSrc = '/assets/img/active.png';
+const tabImgSrc = '/assets/img/tab.png';
 //	每一项
 const BannerItem = ({list}: { list: Array<{ name: string }> }) => {
 	return (
@@ -22,7 +23,7 @@ const BannerItem = ({list}: { list: Array<{ name: string }> }) => {
 							<View className='banner-merchant'>
 								<View className='banner-merchant-img-wrap'>
 									<CoverImage className='banner-merchant-img'
-												src={imgSrc}
+												src={(index & 1) ? activeImgSrc : tabImgSrc}
 									/>
 								</View>
 								<View className='banner-merchant-text'>
@@ -36,14 +37,45 @@ const BannerItem = ({list}: { list: Array<{ name: string }> }) => {
 		</View>
 	);
 };
-const list1 = [
-	{name: '外卖'},
-	{name: '美食'},
-	{name: '酒店'},
-	{name: '外卖'},
-	{name: '美食'},
-	{name: '酒店'},
-];
+
+const list = [];
+(() => {
+	const originList = [
+		{name: '外卖'},
+		{name: '美食'},
+		{name: '酒店'},
+		{name: '外卖'},
+		{name: '美食'},
+		{name: '酒店'},
+		{name: '外卖'},
+		{name: '美食'},
+		{name: '酒店'},
+		{name: '外卖'},
+		{name: '美食'},
+		{name: '酒店'},
+		{name: '外卖'},
+		{name: '美食'},
+		{name: '酒店'},
+		{name: '外卖'},
+		{name: '美食'},
+		{name: '酒店'},
+		{name: '外卖'},
+		{name: '美食'},
+		{name: '酒店'},
+		{name: '外卖'},
+		{name: '美食'},
+		{name: '酒店'},
+		{name: '外卖'},
+		{name: '美食'},
+		{name: '酒店'},
+	];
+	originList.forEach((item, index) => {
+		item.name += index;
+	});
+	while (originList.length) {
+		list.push(originList.splice(0, 10));
+	}
+})();
 const Banner = () => {
 	return (
 		<Swiper
@@ -56,15 +88,15 @@ const Banner = () => {
 			onAnimationFinish={() => {
 			}}
 		>
-			<SwiperItem>
-				<BannerItem list={list1}/>
-			</SwiperItem>
-			<SwiperItem>
-				<BannerItem list={list1}/>
-			</SwiperItem>
-			<SwiperItem>
-				<BannerItem list={list1}/>
-			</SwiperItem>
+			{
+				list.map((item, index) => {
+					return (
+						<SwiperItem key={index}>
+							<BannerItem list={item}/>
+						</SwiperItem>
+					);
+				})
+			}
 		</Swiper>
 	);
 };

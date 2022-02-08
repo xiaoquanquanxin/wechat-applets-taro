@@ -1,6 +1,7 @@
 .nav-wrap {
 	background: #ffcd14;
 	display: flex;
+	flex-direction: column;
 
 	.nav {
 		display: flex;
@@ -10,26 +11,26 @@
 
 		.position {
 			width: 140px;
-			background: red;
+			//background: red;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 
+			//  位置 icon
 			.position-icon {
 				width: 40px;
 			}
 		}
 
+		//  输入框
 		.input-wrap {
 			display: flex;
-			//background: skyblue;
+			background: white;
 			width: calc(100% - 140px);
 			align-items: center;
-			margin-left: 1em;
-			padding-left: .2em;
+			padding-left: .3em;
 			border: 4px solid orange;
 			border-radius: 200px;
-			box-sizing: border-box;
 
 			.input-icon {
 				width: 40px;
@@ -39,6 +40,71 @@
 			.input {
 				width: calc(100% - 40px);
 				color: grey;
+			}
+		}
+	}
+
+	//  定位服务
+	.reminder-wrap {
+		//background: orange;
+		margin-top: 30px;
+		margin-bottom: 20px;
+
+		.reminder {
+			margin: auto;
+			background: rgba(0, 0, 0, 0.65);
+			display: flex;
+			justify-content: space-between;
+			flex-direction: row;
+			align-items: center;
+			border-radius: 10px;
+			width: 94%;
+			padding: 16px 4%;
+
+			.reminder-left {
+				display: flex;
+				flex-direction: row;
+
+				.reminder-location {
+					width: 20px;
+					margin-right: 10px;
+					margin-top: 10px;
+				}
+
+				//  位子描述
+				.reminder-info {
+					color: white;
+					display: flex;
+					flex-direction: column;
+					line-height: 1.6em;
+					//background: lightgreen;
+
+
+					.reminder-info-title {
+						font-size: 24px;
+					}
+
+					.reminder-info-desc {
+						font-size: 20px;
+					}
+				}
+			}
+
+			.reminder-right {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				//  去开启按钮
+				.reminder-open {
+					margin: 0 20px 0;
+					padding: 0;
+					color: white;
+					background-color: dodgerblue;
+					height: 50px;
+					line-height: 50px;
+					width: 120px;
+					font-size: 20px;
+				}
 			}
 		}
 	}

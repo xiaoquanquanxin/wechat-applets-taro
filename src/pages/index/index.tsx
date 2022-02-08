@@ -13,16 +13,16 @@ const Index = () => {
 			{/*黄色导航*/}
 			<Nav/>
 			{/*滚动的banner*/}
-			<Banner/>
-			{/*<MoveArea/>*/}
-			<Button onClick={() => {
-				navigateTo({
-					url: '/pages/wxParse/wxParse'
-				});
-			}}
-			>
-				去demo
-			</Button>
+			{/*<Banner/>*/}
+			{/*/!*<MoveArea/>*!/*/}
+			{/*<Button onClick={() => {*/}
+			{/*	navigateTo({*/}
+			{/*		url: '/pages/wxParse/wxParse'*/}
+			{/*	});*/}
+			{/*}}*/}
+			{/*>*/}
+			{/*	去demo*/}
+			{/*</Button>*/}
 		</View>
 	);
 };
