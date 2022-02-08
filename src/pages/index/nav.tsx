@@ -50,7 +50,7 @@ class ReminderWrap extends Component<any, { open: boolean }> {
 
 const Nav = () => {
 	return (
-		<View className='nav-wrap' style={{minHeight: rect.bottom + 20 + 'px'}}>
+		<View className='nav-wrap' style={{minHeight: rect.bottom + 10 + 'px'}}>
 			<View className='nav'
 				  style={
 					  {
